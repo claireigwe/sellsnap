@@ -47,7 +47,7 @@ export default async function ProductsView() {
         </div>
       ) : (
         <div className={styles.grid}>
-          {products.map((product) => (
+          {products.map((product: { id: string; name: string; description: string | null; price: number; imageUrl: string; uniqueSlug: string; }) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
