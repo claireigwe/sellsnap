@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import { useRouter } from 'next/navigation';
-import { signIn } from 'next-auth/react';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/Card';
@@ -201,14 +200,7 @@ export function SignupForm({
         return;
       }
 
-      await signIn('credentials', {
-        redirect: false,
-        email: formData.email,
-        password: formData.password,
-      });
-
-      router.push('/onboarding');
-      router.refresh();
+      router.push(`/auth?mode=check-email&email=${encodeURIComponent(formData.email)}`);
     } catch (err: any) {
       setError(err.message || 'Something went wrong');
       setLoading(false);

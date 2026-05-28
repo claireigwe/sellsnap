@@ -19,16 +19,18 @@ enum PaymentStatus {
 }
 
 model User {
-  id                   String    @id @default(cuid())
-  name                 String
-  email                String    @unique
-  businessName         String
-  passwordHash         String
-  passwordResetToken   String?
-  passwordResetExpires DateTime?
-  onboarded            Boolean   @default(false)
-  createdAt            DateTime  @default(now())
-  products             Product[]
+  id                     String    @id @default(cuid())
+  name                   String
+  email                  String    @unique
+  businessName           String
+  passwordHash           String
+  passwordResetToken     String?
+  passwordResetExpires   DateTime?
+  emailVerified          DateTime?
+  emailVerificationToken String? @unique
+  onboarded              Boolean   @default(false)
+  createdAt              DateTime  @default(now())
+  products               Product[]
 }
 
 model Product {

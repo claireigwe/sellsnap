@@ -146,6 +146,30 @@
   margin-top: 0px;
 }
 
+.verifyHint {
+  text-align: center;
+  margin-top: 4px;
+  font-family: var(--body-small-font-family);
+  font-size: var(--body-small-font-size);
+}
+
+.checkEmailInfo {
+  text-align: center;
+  padding: 16px 0;
+}
+
+.checkEmailIcon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.checkEmailText {
+  font-family: var(--body-medium-font-family);
+  font-size: var(--body-medium-font-size);
+  color: var(--color-on-surface-variant);
+  margin: 0 0 16px;
+}
+
 .loading {
   display: flex;
   justify-content: center;

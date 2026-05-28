@@ -17,6 +17,7 @@ export function LoginForm({
   const router = useRouter();
   const searchParams = useSearchParams();
   const registered = searchParams.get('registered');
+  const verified = searchParams.get('verified');
   const callbackUrl = searchParams.get('callbackUrl') || '/dashboard';
 
   const [loading, setLoading] = React.useState(false);
@@ -91,6 +92,16 @@ export function LoginForm({
               Account created successfully. Please log in.
             </div>
           )}
+          {verified === '1' && (
+            <div className={styles.success}>
+              Email verified successfully! You can now log in.
+            </div>
+          )}
+          {verified === 'already' && (
+            <div className={styles.success}>
+              Your email is already verified. Log in below.
+            </div>
+          )}
           {error && <div className={styles.error}>{error}</div>}
 
           <div className={styles.field}>
@@ -128,6 +139,18 @@ export function LoginForm({
               Forgot Password?
             </button>
           </div>
+
+          {formData.email && error && (
+            <div className={styles.verifyHint}>
+              <button
+                type="button"
+                onClick={() => router.push(`/auth?mode=check-email&email=${encodeURIComponent(formData.email)}`)}
+                className={styles.link}
+              >
+                Didn't get a verification email?
+              </button>
+            </div>
+          )}
 
           <Button type="submit" fullWidth disabled={loading}>
             {loading ? 'Logging in...' : 'Login'}

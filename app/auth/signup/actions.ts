@@ -5,8 +5,10 @@ import { prisma } from "@/lib/db";
 import { signupSchema, type SignupInput, type ActionResult } from "@/types";
 import { headers } from "next/headers";
 import { authLimiter } from "@/lib/rate-limit";
+import { nanoid } from "nanoid";
+import { sendVerificationEmail } from "@/lib/email";
 
-export async function signupUser(data: SignupInput): Promise<ActionResult> {
+export async function signupUser(data: SignupInput): Promise<ActionResult<{ email: string }>> {
   try {
     const headersList = await headers();
     const ip = headersList.get('x-forwarded-for') ?? '127.0.0.1';
@@ -30,17 +32,21 @@ export async function signupUser(data: SignupInput): Promise<ActionResult> {
     }
     
     const passwordHash = await hash(validated.data.password, 12);
-    
+    const emailVerificationToken = nanoid(32);
+
     await prisma.user.create({
       data: {
         name: validated.data.name,
         email: validated.data.email,
         businessName: validated.data.businessName,
         passwordHash,
+        emailVerificationToken,
       },
     });
+
+    await sendVerificationEmail(validated.data.email, emailVerificationToken);
     
-    return { ok: true };
+    return { ok: true, data: { email: validated.data.email } };
   } catch (error: any) {
     console.error('Signup error:', error);
     return { ok: false, error: { code: 'internal_error', message: error.message || 'Something went wrong' } };

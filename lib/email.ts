@@ -63,3 +63,31 @@ export async function sendPasswordResetEmail(email: string, resetToken: string) 
     console.error('Failed to send password reset email:', error);
   }
 }
+
+export async function sendVerificationEmail(email: string, token: string) {
+  const verifyUrl = `${process.env.NEXT_PUBLIC_APP_URL}/api/auth/verify-email?token=${token}`;
+
+  if (!apiKey) {
+    console.log('Mock email: Verification to', email, 'with URL:', verifyUrl);
+    return;
+  }
+
+  try {
+    await sgMail.send({
+      from: FROM_EMAIL,
+      to: email,
+      subject: 'Verify your email address — SellSnap',
+      html: `
+        <div style="font-family: sans-serif; padding: 24px; max-width: 600px;">
+          <h1 style="color: #006C59;">Welcome to SellSnap!</h1>
+          <p>Click the button below to verify your email address and get started:</p>
+          <a href="${verifyUrl}" style="display: inline-block; background: #006C59; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; margin: 16px 0;">Verify Email</a>
+          <p style="color: #666; font-size: 14px;">This link expires in 24 hours.</p>
+          <p style="color: #666; font-size: 14px;">If you didn't create an account, you can ignore this email.</p>
+        </div>
+      `,
+    });
+  } catch (error) {
+    console.error('Failed to send verification email:', error);
+  }
+}
