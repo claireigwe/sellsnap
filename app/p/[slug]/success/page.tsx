@@ -7,6 +7,7 @@ import { Card, CardTitle, CardContent } from '@/components/ui/Card';
 import { buttonVariants } from '@/components/ui/Button';
 import { ConfettiEffect } from '@/components/features/ConfettiEffect';
 import { formatPrice, cn } from '@/lib/utils';
+import type { Prisma } from '@prisma/client';
 import styles from './success.module.css';
 
 type Props = {
@@ -42,7 +43,7 @@ export default async function SuccessPage({ params, searchParams }: Props) {
       try {
         const verifiedTx = await verifyTransaction(transactionId);
         if (verifiedTx.status === 'successful') {
-          await prisma.$transaction(async (tx) => {
+          await prisma.$transaction(async (tx: Prisma.TransactionClient) => {
             const currentOrder = await tx.order.findUnique({
               where: { transactionReference: txRef },
               include: { payment: true },

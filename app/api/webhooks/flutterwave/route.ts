@@ -3,6 +3,7 @@ import { revalidatePath } from 'next/cache';
 import { prisma } from '@/lib/db';
 import { verifyTransaction } from '@/lib/flutterwave';
 import { sendOrderNotificationEmail } from '@/lib/email';
+import type { Prisma } from '@prisma/client';
 
 export async function POST(request: Request) {
   try {
@@ -43,7 +44,7 @@ export async function POST(request: Request) {
     let buyerEmail = payload.data.customer.email;
 
     // Use a transaction to ensure idempotency and atomic updates
-    await prisma.$transaction(async (tx) => {
+    await prisma.$transaction(async (tx: Prisma.TransactionClient) => {
       const order = await tx.order.findUnique({
         where: { transactionReference: txRef },
         include: { payment: true, product: { include: { user: true } } },
