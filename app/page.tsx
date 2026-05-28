@@ -1,11 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { redirect } from 'next/navigation';
 import { getSession } from '@/lib/auth';
 import styles from './page.module.css';
 
 export default async function LandingPage() {
   const session = await getSession();
-  const isLoggedIn = !!session;
+  if (session) {
+    redirect('/dashboard');
+  }
 
   return (
     <main className={styles.root}>
@@ -22,11 +25,7 @@ export default async function LandingPage() {
             Upload your product, get a link, share and get paid instantly.
           </p>
           <div className={styles.ctas}>
-            {isLoggedIn ? (
-              <Link href="/dashboard" className={styles.primaryCta}>Go to Dashboard</Link>
-            ) : (
-              <Link href="/auth?mode=signup" className={styles.primaryCta}>Get Started</Link>
-            )}
+            <Link href="/auth?mode=signup" className={styles.primaryCta}>Get Started</Link>
           </div>
         </div>
       </section>
