@@ -200,7 +200,8 @@ export function SignupForm({
         return;
       }
 
-      router.push(`/auth?mode=check-email&email=${encodeURIComponent(formData.email)}`);
+      setLoading(false);
+      window.location.href = `/auth?mode=check-email&email=${encodeURIComponent(formData.email)}`;
     } catch (err: any) {
       setError(err.message || 'Something went wrong');
       setLoading(false);

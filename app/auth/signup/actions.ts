@@ -44,7 +44,8 @@ export async function signupUser(data: SignupInput): Promise<ActionResult<{ emai
       },
     });
 
-    await sendVerificationEmail(validated.data.email, emailVerificationToken);
+    // Fire verification email in background — don't block signup on email delivery
+    sendVerificationEmail(validated.data.email, emailVerificationToken).catch(console.error);
     
     return { ok: true, data: { email: validated.data.email } };
   } catch (error: any) {
