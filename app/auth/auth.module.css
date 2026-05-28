@@ -1,0 +1,157 @@
+.card {
+  width: 100%;
+  max-width: 440px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-family: var(--label-medium-font-family);
+  font-size: var(--label-medium-font-size);
+  font-weight: 600;
+  color: var(--color-on-surface);
+}
+
+.error {
+  padding: 12px;
+  background-color: var(--color-error-container);
+  color: var(--color-on-error-container);
+  border-radius: 8px;
+  font-family: var(--body-medium-font-family);
+  font-size: var(--body-medium-font-size);
+}
+
+.success {
+  padding: 12px;
+  background-color: var(--color-tertiary-container);
+  color: var(--color-on-tertiary-container);
+  border-radius: 8px;
+  font-family: var(--body-medium-font-family);
+  font-size: var(--body-medium-font-size);
+}
+
+.footer {
+  justify-content: center;
+  border-top: 1px solid var(--color-outline-variant);
+  margin-top: 8px;
+  padding-top: 16px;
+  text-align: center;
+}
+
+.footerText {
+  font-family: var(--body-medium-font-family);
+  font-size: var(--body-medium-font-size);
+  color: var(--color-on-surface-variant);
+  margin: 0;
+}
+
+.link {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.forgotPassword {
+  text-align: right;
+  margin-top: -8px;
+  margin-bottom: 8px;
+  font-family: var(--body-small-font-family);
+  font-size: var(--body-small-font-size);
+}
+
+.stepIndicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 24px;
+  background-color: var(--color-surface-container);
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+.stepActive {
+  opacity: 1;
+}
+
+.stepNumber {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.stepLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+}
+
+.stepLine {
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-outline);
+}
+
+.buttonRow {
+  display: flex;
+  gap: 12px;
+}
+
+.buttonRow button:first-child {
+  flex: 0 0 auto;
+}
+
+.buttonRow button:last-child {
+  flex: 1;
+}
+
+.fieldError {
+  font-family: var(--body-small-font-family);
+  font-size: var(--body-small-font-size);
+  color: var(--color-error);
+  margin-top: 0px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  font-family: var(--body-medium-font-family);
+  font-size: var(--body-medium-font-size);
+  color: var(--color-on-surface-variant);
+}

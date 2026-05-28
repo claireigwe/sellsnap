@@ -1,0 +1,69 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 24px;
+}
+
+@media (max-width: 767px) {
+  .root {
+    padding: 16px;
+    gap: 24px;
+  }
+}
+
+/* Card styles now come from Card component (glasmorphism) */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.title {
+  font-family: var(--headline-small-font-family);
+  font-size: var(--headline-small-font-size);
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin:0;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .statsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.chartSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding: 24px;
+}
+
+.recentOrders {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+}
+
+.sectionTitle {
+  font-family: var(--title-medium-font-family);
+  font-size: var(--title-medium-font-size);
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin:0;
+}

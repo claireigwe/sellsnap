@@ -1,0 +1,6 @@
+.price {
+  font-family: var(--title-large-font-family);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-primary);
+}

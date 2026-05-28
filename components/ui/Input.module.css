@@ -1,0 +1,74 @@
+.input {
+  display: flex;
+  height: 44px; /* Touch target size */
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--color-outline-variant);
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0 16px;
+  font-family: var(--body-large-font-family);
+  font-size: var(--body-large-font-size);
+  color: var(--color-on-surface);
+  transition: all 0.2s ease;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputWrapper .input {
+  padding-right: 48px;
+}
+
+.toggle {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-family: var(--label-medium-font-family);
+  font-size: var(--label-medium-font-size);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.toggle:hover {
+  background-color: var(--color-surface-container);
+}
+
+.input::placeholder {
+  color: var(--color-outline-variant);
+}
+
+.filled,
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  -webkit-text-fill-color: var(--color-on-surface);
+  box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.5) inset !important;
+}
+
+.input:focus-visible {
+  outline: none;
+  border-color: var(--color-primary);
+  background-color: #fff;
+}
+
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--color-surface-container-lowest);
+}
+
+.error {
+  border-color: var(--color-error);
+}
+
+.error:focus-visible {
+  border-color: var(--color-error);
+}

@@ -1,0 +1,27 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 24px;
+}
+
+@media (max-width: 767px) {
+  .root {
+    padding: 16px;
+    gap: 24px;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-family: var(--headline-small-font-family);
+  font-size: var(--headline-small-font-size);
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin: 0;
+}

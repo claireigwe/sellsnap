@@ -1,0 +1,20 @@
+.card {
+  /* Inherits Card styles */
+}
+
+.content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  width: 60%;
+  height: 16px;
+}
+
+.value {
+  width: 40%;
+  height: 32px;
+}

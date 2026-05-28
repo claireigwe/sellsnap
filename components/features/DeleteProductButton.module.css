@@ -1,0 +1,100 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.dialog {
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 32px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.2s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.title {
+  font-family: var(--title-large-font-family);
+  font-size: var(--title-large-font-size);
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin: 0 0 12px;
+}
+
+.message {
+  font-family: var(--body-medium-font-family);
+  font-size: var(--body-medium-font-size);
+  color: var(--color-on-surface-variant);
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.button {
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--label-large-font-family);
+  font-size: var(--label-large-font-size);
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.cancelButton {
+  background-color: var(--color-surface-container);
+  color: var(--color-on-surface);
+}
+
+.cancelButton:hover {
+  background-color: var(--color-surface-container-high);
+}
+
+.deleteButton {
+  background-color: var(--color-error);
+  color: var(--color-on-error);
+}
+
+.deleteButton:hover {
+  opacity: 0.9;
+}
+
+.deleteButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

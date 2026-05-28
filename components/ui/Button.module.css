@@ -1,0 +1,96 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  border-radius: 12px;
+  font-family: var(--label-large-font-family);
+  font-size: var(--label-large-font-size);
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Variants */
+.primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.primary:hover {
+  background-color: var(--color-inverse-primary);
+  color: var(--color-on-primary-container);
+}
+
+.secondary {
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+}
+
+.secondary:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
+}
+
+.outline {
+  border-color: var(--color-outline);
+  background-color: transparent;
+  color: var(--color-on-surface);
+}
+
+.outline:hover {
+  background-color: var(--color-surface-container);
+}
+
+.ghost {
+  background-color: transparent;
+  color: var(--color-on-surface);
+}
+
+.ghost:hover {
+  background-color: var(--color-surface-container);
+}
+
+.danger {
+  background-color: var(--color-error);
+  color: var(--color-on-error);
+}
+
+.danger:hover {
+  background-color: var(--color-error-container);
+  color: var(--color-on-error-container);
+}
+
+/* Sizes */
+.defaultSize {
+  height: 44px; /* Mobile first touch target */
+  padding: 0 16px;
+}
+
+.smSize {
+  height: 36px;
+  padding: 0 12px;
+  font-size: var(--label-medium-font-size);
+}
+
+.lgSize {
+  height: 52px;
+  padding: 0 24px;
+}
+
+.iconSize {
+  height: 44px;
+  width: 44px;
+  padding: 0;
+}
+
+.fullWidth {
+  width: 100%;
+}

@@ -1,0 +1,69 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 16px;
+}
+
+.imageWrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.name {
+  width: 70%;
+  height: 24px;
+}
+
+.description {
+  width: 100%;
+  height: 14px;
+}
+
+.price {
+  width: 40%;
+  height: 16px;
+  margin-top: 4px;
+}
+
+.actionBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  gap: 8px;
+}
+
+.button {
+  flex: 1;
+  height: 44px;
+  border-radius: 12px;
+}
+
+.iconButton {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}

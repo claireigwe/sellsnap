@@ -1,0 +1,168 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 16px;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--color-surface-container);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlayActions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.iconButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-on-surface);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  backdrop-filter: blur(4px);
+  text-decoration: none;
+}
+
+.iconButton:last-child {
+  color: var(--color-error);
+}
+
+.iconButton:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.05);
+}
+
+.iconButton:last-child:hover {
+  background: var(--color-error-container);
+  color: var(--color-error);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 !important;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.name {
+  font-family: var(--title-large-font-family);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin: 0;
+  word-break: break-word;
+}
+
+.description {
+  font-family: var(--body-medium-font-family);
+  font-size: var(--body-medium-font-size);
+  color: var(--color-on-surface-variant);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.actionBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  gap: 8px;
+}
+
+.actionBar button:first-child {
+  flex: 1;
+}
+
+.copyButton {
+  background-color: hsl(216, 89%, 92%) !important;
+  color: var(--color-primary) !important;
+  height: 44px !important;
+}
+
+.copyButton:hover {
+  background-color: hsl(216, 89%, 88%) !important;
+}
+
+.whatsappButton {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #25D366;
+  color: white;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+}
+
+.whatsappButton:hover {
+  background-color: #128C7E;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .imageWrapper {
+    border-radius: 16px;
+  }
+
+  .name {
+    font-size: 18px;
+  }
+
+  .actionBar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .actionBar button:first-child {
+    width: 100%;
+  }
+
+  .whatsappButton {
+    width: 100%;
+    height: 44px;
+  }
+}

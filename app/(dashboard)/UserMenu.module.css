@@ -1,0 +1,149 @@
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  color: var(--color-text-primary);
+}
+
+.trigger:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.triggerActive {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.userInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.userName {
+  font-family: var(--title-small-font-family);
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userEmail {
+  font-family: var(--body-small-font-family);
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chevron {
+  color: var(--color-text-secondary);
+  transition: transform 0.2s ease;
+}
+
+.chevronRotated {
+  transform: rotate(180deg);
+}
+
+.popover {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  padding: 8px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px) scale(0.95);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 50;
+}
+
+.popoverOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.popoverHeader {
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.popoverName {
+  font-family: var(--title-small-font-family);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.popoverEmail {
+  font-family: var(--body-small-font-family);
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+.popoverDivider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.05);
+  margin: 8px 0;
+}
+
+.signOutWrapper {
+  width: 100%;
+}
+
+/* Ensure the SignOutButton (which might be a form/button) fits nicely */
+.signOutWrapper :global(button),
+.signOutWrapper :global(a) {
+  width: 100% !important;
+  justify-content: flex-start !important;
+  background: transparent !important;
+  color: #ef4444 !important; /* Red for logout */
+  border: none !important;
+  padding: 8px 12px !important;
+  font-size: 14px !important;
+  border-radius: 8px !important;
+  transition: background 0.2s ease !important;
+}
+
+.signOutWrapper :global(button:hover) {
+  background: rgba(239, 68, 68, 0.1) !important;
+}

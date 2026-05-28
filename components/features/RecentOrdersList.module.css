@@ -1,0 +1,64 @@
+.card {
+  overflow: hidden;
+}
+
+.empty {
+  padding: 32px;
+  text-align: center;
+  color: var(--color-on-surface-variant);
+  font-family: var(--body-medium-font-family);
+  font-size: var(--body-medium-font-size);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.productName {
+  font-family: var(--label-large-font-family);
+  font-size: var(--label-large-font-size);
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin: 0;
+}
+
+.buyer {
+  font-family: var(--body-medium-font-family);
+  font-size: var(--body-medium-font-size);
+  color: var(--color-on-surface-variant);
+  margin: 0;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.amount {
+  font-family: var(--label-large-font-family);
+  font-size: var(--label-large-font-size);
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin: 0;
+}

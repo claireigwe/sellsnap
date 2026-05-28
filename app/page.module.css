@@ -1,0 +1,107 @@
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.headline {
+  font-family: var(--display-medium-font-family);
+  /* Fluid: 28px on 320px viewport → 48px on 1280px viewport */
+  font-size: clamp(1.75rem, 4vw + 1rem, 3rem);
+  font-weight: 800;
+  /* Fluid line-height keeps pace with font-size */
+  line-height: clamp(2.25rem, 5vw + 1rem, 3.75rem);
+  letter-spacing: clamp(-1.5px, -0.3vw, -2.5px);
+  color: var(--color-on-surface);
+  margin: 0;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.subheadline {
+  font-family: var(--body-large-font-family);
+  /* Fluid: 15px → 18px */
+  font-size: clamp(0.9375rem, 1vw + 0.75rem, 1.125rem);
+  line-height: clamp(1.4rem, 1.5vw + 1rem, 1.75rem);
+  color: var(--color-on-surface-variant);
+  max-width: 500px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ctas {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.primaryCta {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-family: var(--label-large-font-family);
+  font-size: var(--label-large-font-size);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.primaryCta:hover {
+  background-color: var(--color-inverse-primary);
+  color: var(--color-on-primary-container);
+}
+
+.secondaryCta {
+  background-color: var(--color-surface-container);
+  color: var(--color-on-surface);
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-family: var(--label-large-font-family);
+  font-size: var(--label-large-font-size);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.secondaryCta:hover {
+  background-color: var(--color-surface-container-highest);
+}
+
+@media (max-width: 768px) {
+  .ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .primaryCta, .secondaryCta {
+    width: 100%;
+    text-align: center;
+  }
+}

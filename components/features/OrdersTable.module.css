@@ -1,0 +1,94 @@
+.card {
+  overflow: hidden;
+}
+
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table th {
+  padding: 16px 24px;
+  background-color: var(--color-surface-container);
+  font-family: var(--label-large-font-family);
+  font-size: var(--label-large-font-size);
+  font-weight: 600;
+  color: var(--color-on-surface-variant);
+  border-bottom: 1px solid var(--color-outline-variant);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--color-outline-variant);
+  font-family: var(--body-medium-font-family);
+  font-size: var(--body-medium-font-size);
+  color: var(--color-on-surface);
+  white-space: nowrap;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.mono {
+  font-family: monospace;
+  color: var(--color-on-surface-variant);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-top: 1px solid var(--color-outline-variant);
+  background-color: var(--color-surface);
+}
+
+.pageInfo {
+  font-family: var(--body-medium-font-family);
+  font-size: var(--body-medium-font-size);
+  color: var(--color-on-surface-variant);
+}
+
+.pageControls {
+  display: flex;
+  gap: 8px;
+}
+
+.pageBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--color-outline-variant);
+  background-color: transparent;
+  color: var(--color-on-surface);
+  font-family: var(--label-large-font-family);
+  font-size: var(--label-large-font-size);
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.pageBtn:hover {
+  background-color: var(--color-surface-container);
+}
+
+.pageBtn[aria-disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
