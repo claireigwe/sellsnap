@@ -63,7 +63,7 @@ export default async function DashboardView() {
     chartDataMap.set(dayStr, 0);
   }
 
-  recentPaidOrders.forEach(order => {
+  recentPaidOrders.forEach((order: { amount: number; createdAt: Date }) => {
     const dayStr = days[order.createdAt.getDay()];
     const current = chartDataMap.get(dayStr) || 0;
     chartDataMap.set(dayStr, current + (order.amount / 100));
