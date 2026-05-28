@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "build:tokens": "node tokens/convert-tokens.js"
+    "build:tokens": "node tokens/convert-tokens.js",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",
