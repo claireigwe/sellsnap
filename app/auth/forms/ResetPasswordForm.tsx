@@ -1,14 +1,13 @@
 "use client";
 
 import * as React from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/Card';
 import styles from '../auth.module.css';
 
 export function ResetPasswordForm() {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const token = searchParams.get('token');
 
@@ -27,7 +26,7 @@ export function ResetPasswordForm() {
         </CardHeader>
         <CardFooter className={styles.footer}>
           <p className={styles.footerText}>
-            <button type="button" onClick={() => router.push('/auth?mode=forgot')} className={styles.link}>
+            <button type="button" onClick={() => window.location.href = '/auth?mode=forgot'} className={styles.link}>
               Request a new reset link
             </button>
           </p>
@@ -50,7 +49,7 @@ export function ResetPasswordForm() {
         </CardContent>
         <CardFooter className={styles.footer}>
           <p className={styles.footerText}>
-            <button type="button" onClick={() => router.push('/auth')} className={styles.link}>
+            <button type="button" onClick={() => window.location.href = '/auth'} className={styles.link}>
               Go to Login
             </button>
           </p>
