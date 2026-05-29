@@ -5,10 +5,11 @@ import { ForgotPasswordForm } from './forms/ForgotPasswordForm';
 import { SignupForm } from './forms/SignupForm';
 import { LoginForm } from './forms/LoginForm';
 import { CheckEmailForm } from './forms/CheckEmailForm';
+import { ResetPasswordForm } from './forms/ResetPasswordForm';
 import { useSearchParams } from 'next/navigation';
 import styles from './auth.module.css';
 
-type AuthMode = 'login' | 'signup' | 'forgot' | 'check-email';
+type AuthMode = 'login' | 'signup' | 'forgot' | 'check-email' | 'reset';
 function AuthContent() {
   const searchParams = useSearchParams();
   const urlMode = searchParams.get('mode');
@@ -22,6 +23,8 @@ function AuthContent() {
       setMode('forgot');
     } else if (urlMode === 'check-email') {
       setMode('check-email');
+    } else if (urlMode === 'reset') {
+      setMode('reset');
     }
   }, [urlMode]);
 
@@ -41,6 +44,8 @@ function AuthContent() {
         <ForgotPasswordForm onBackToLogin={switchToLogin} />
       ) : mode === 'check-email' ? (
         <CheckEmailForm email={email} onBackToLogin={switchToLogin} />
+      ) : mode === 'reset' ? (
+        <ResetPasswordForm />
       ) : (
         <LoginForm onSwitchToSignup={switchToSignup} />
       )}

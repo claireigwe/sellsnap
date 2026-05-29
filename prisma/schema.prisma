@@ -24,7 +24,7 @@ model User {
   email                  String    @unique
   businessName           String
   passwordHash           String
-  passwordResetToken     String?
+  passwordResetToken     String? @unique
   passwordResetExpires   DateTime?
   emailVerified          DateTime?
   emailVerificationToken String? @unique
